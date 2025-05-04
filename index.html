@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.0.1/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="coloris.min.css" />
+    <script src="coloris.min.js"></script>
+    <script src="mandala.js"></script>
+  </head>
+  <body>
+    <input id="color" type="button" data-coloris />
+    <input
+      type="number"
+      id="changeFaces"
+      value="16"
+      min="2"
+      max="50"
+      onchange="changeFaces()"
+    />
+    <button id="delete" onclick="clearCanvas()">🗑️</button>
+  </body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .p5Canvas {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    #delete {
+      background-color: transparent;
+      border: none;
+      font-size: x-large;
+    }
+
+    input[data-coloris] {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    #color {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      opacity: 0.2;
+    }
+
+    #color:hover {
+      opacity: 1;
+    }
+
+    #delete {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      opacity: 0.2;
+    }
+
+    #delete:hover {
+      opacity: 1;
+    }
+
+    input#changeFaces {
+      position: absolute;
+      top: 25px;
+      left: 100px;
+      width: 40px;
+      padding: 4px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+      color: #333;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      -moz-appearance: textfield;
+      opacity: 0.2;
+    }
+
+    input#changeFaces:hover {
+      opacity: 1;
+    }
+
+    input#changeFaces:focus {
+      border-color: #555;
+      box-shadow: 0 0 0 2px rgba(85, 85, 85, 0.1);
+    }
+
+    input#changeFaces::-webkit-outer-spin-button,
+    input#changeFaces::-webkit-inner-spin-button {
+      height: 24px;
+      width: 16px;
+      opacity: 1;
+      display: inline;
+    }
+  </style>
+</html>
