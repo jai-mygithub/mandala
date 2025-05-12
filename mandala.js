@@ -1,5 +1,16 @@
 let faces = 16;
-let color = "rgb(100, 180, 255)";
+let colors = [
+  "rgb(255,80,80)",
+  "rgb(255,160,60)",
+  "rgb(255,255,80)",
+  "rgb(120,255,100)",
+  "rgb(80,255,200)",
+  "rgb(100, 180, 255)",
+  "rgb(160,120,255)",
+  "rgb(255,100,255)",
+  "rgb(255,130,200)",
+];
+let color;
 let canvas;
 let colorInput;
 
@@ -19,6 +30,7 @@ function changeFaces() {
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
+  color = random(colors);
   canvas.elt.addEventListener("contextmenu", (e) => e.preventDefault());
 
   colorInput = document.getElementById("color");
@@ -38,17 +50,7 @@ function setupColoris(inputElement) {
     alpha: false,
     swatchesOnly: true,
     defaultColor: color,
-    swatches: [
-      "rgb(255,80,80)",
-      "rgb(255,160,60)",
-      "rgb(255,255,80)",
-      "rgb(120,255,100)",
-      "rgb(80,255,200)",
-      "rgb(100, 180, 255)",
-      "rgb(160,120,255)",
-      "rgb(255,100,255)",
-      "rgb(255,130,200)",
-    ],
+    swatches: colors,
   });
 
   document.addEventListener("coloris:pick", (event) => {
