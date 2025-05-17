@@ -30,6 +30,9 @@ function changeFaces() {
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
+
+  canvas.elt.style.cursor = "url('crayon.png') 1 62, auto";
+
   color = random(colors);
   canvas.elt.addEventListener("contextmenu", (e) => e.preventDefault());
 
